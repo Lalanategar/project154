@@ -19,4 +19,20 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('students', 'Api\StudentsController@index');
-Route::get('students\{student}\detail', 'Api\StudentsController@show');
+Route::get('students\{student}', 'Api\StudentsController@show');
+
+
+
+
+Route::get('kursus', 'API\CourseController@index');
+
+Route::get('kursus/{data}', 'API\CourseController@show');
+
+// Route Hapus Data
+Route::delete('kursus/{data}', 'API\CourseController@destroy');
+
+// Route Tambah Data
+Route::post('kursus', 'API\CourseController@store');
+
+// Route Update Data
+Route::patch('kursus/{id}', 'API\CourseController@update');
